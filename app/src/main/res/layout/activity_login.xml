@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyLogin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/divider"
+    tools:context="com.example.fernando.proyectofaguilar.LoginActivity"
+    android:weightSum="1">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="305dp"
+        android:layout_height="107dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/fundacion"
+        android:layout_marginTop="40dp"
+        android:layout_weight="0.10" />
+
+    <EditText
+        android:id="@+id/txtCuentaUsuario"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/background_light"
+        android:fontFamily="sans-serif"
+        android:hint="@string/cuenta_usuario"
+        android:inputType="text"
+        android:paddingBottom="5dp"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:text=""
+        tools:layout_gravity="center" />
+
+
+    <EditText
+        android:id="@+id/txtClaveUsuario"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center"
+        android:layout_marginBottom="30dp"
+        android:background="@android:color/background_light"
+        android:fontFamily="sans-serif"
+        android:hint="@string/clave_usuario"
+        android:inputType="textPassword"
+        android:paddingBottom="5dp"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnIngresar"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center"
+        android:layout_marginBottom="40dp"
+        android:background="@color/primary_dark"
+        android:text="@string/login"
+        android:textColor="@color/divider" />
+
+</LinearLayout>

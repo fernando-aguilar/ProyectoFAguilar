@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FUNDA-PRÓ</string>
+    <string name="cuenta_usuario">Cuenta de usuario</string>
+    <string name="clave_usuario">Clave de usuario</string>
+    <string name="login">Ingresar</string>
+
+    <string name="login_ok">Bienvenido: %s</string>
+    <string name="login_error">Cuenta o clave de usuario inválidas</string>
+</resources>
