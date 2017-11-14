@@ -41,9 +41,14 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (vpsCuentaUsuario.equals(CUENTA_VALIDO) && vpsClaveUsuario.equals(CONTRASEÑA_VALIDO)) {
                     //Toast.makeText(getApplicationContext(), getString(R.string.login_ok, vpsCuentaUsuario), Toast.LENGTH_SHORT).show();
-                    Intent menuIntent = new Intent(context, MenuActivity.class);
-                    menuIntent.putExtra("CuentaUsuario", txtCuentaUsuario.getText().toString());
-                    startActivity(menuIntent);
+
+                    //Intent menuIntent = new Intent(context, MenuActivity.class);
+                    //menuIntent.putExtra("CuentaUsuario", txtCuentaUsuario.getText().toString());
+                    //startActivity(menuIntent);
+
+                    Intent materialIntent = new Intent(context, MaterialActivity.class);
+                    materialIntent.putExtra("CuentaUsuario", txtCuentaUsuario.getText().toString());
+                    startActivity(materialIntent);
 
                 } else {
                     Toast.makeText(getApplicationContext(), getString(R.string.login_error), Toast.LENGTH_SHORT).show();

@@ -6,4 +6,10 @@
 
     <string name="login_ok">Bienvenido: %s</string>
     <string name="login_error">Cuenta o clave de usuario inválidas</string>
+
+    <!-- -->
+    <string name="item_uno">Menu Uno</string>
+    <string name="item_dos">Menu Dos</string>
+    <string name="item_tres">Menu Tres</string>
+    <string name="item_cuatro">Menu Cuatro</string>
 </resources>
