@@ -17,7 +17,7 @@
         android:layout_height="107dp"
         android:layout_gravity="center"
         app:srcCompat="@drawable/fundacion"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_weight="0.10" />
 
     <EditText

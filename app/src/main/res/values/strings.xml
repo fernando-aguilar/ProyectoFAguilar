@@ -8,8 +8,8 @@
     <string name="login_error">Cuenta o clave de usuario inválidas</string>
 
     <!-- -->
-    <string name="item_uno">Menu Uno</string>
-    <string name="item_dos">Menu Dos</string>
-    <string name="item_tres">Menu Tres</string>
-    <string name="item_cuatro">Menu Cuatro</string>
+    <string name="item_uno">Clientes</string>
+    <string name="item_dos">Vencimientos</string>
+    <string name="item_tres">Cuotas Cobradas</string>
+    <string name="item_cuatro">Salir</string>
 </resources>
