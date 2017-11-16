@@ -1,7 +1,10 @@
 package com.example.fernando.proyectofaguilar;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.provider.Settings;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -133,12 +136,39 @@ public class MaterialActivity extends AppCompatActivity {
     private void seleccionartItem(int i) {
         //Toast.makeText(context,"Selecciono el item N "+i,Toast.LENGTH_LONG).show();
         switch (i) {
+            case 1:
+
+                break;
+            case 2:
+
+                break;
             case 3:
                 Intent cuotasIntent = new Intent(context, CuotasCobradasActivity.class);
                 //cuotasIntent.putExtra("CuentaUsuario", lblCuentaUsuario.getText().toString());
                 startActivity(cuotasIntent);
                 break;
             default:
+                AlertDialog.Builder Dialogo = new AlertDialog.Builder(MaterialActivity.this);
+                Dialogo.setTitle("Salir de la Aplicación");
+                Dialogo.setMessage("¿Está seguro de salir de la aplicación? ");
+                Dialogo.setIcon(R.drawable.info);
+
+                Dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //finish();
+
+                        finish();
+                        System.exit(0);
+                    }
+                });
+                Dialogo.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                Dialogo.show();
                 //Toast.makeText(context, "Selecciono el item N " + i, Toast.LENGTH_LONG).show();
         }
     }
