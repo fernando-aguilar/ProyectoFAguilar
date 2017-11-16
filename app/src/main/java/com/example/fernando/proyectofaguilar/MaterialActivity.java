@@ -139,7 +139,7 @@ public class MaterialActivity extends AppCompatActivity {
                 startActivity(cuotasIntent);
                 break;
             default:
-                Toast.makeText(context, "Selecciono el item N " + i, Toast.LENGTH_LONG).show();
+                //Toast.makeText(context, "Selecciono el item N " + i, Toast.LENGTH_LONG).show();
         }
     }
 
