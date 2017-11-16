@@ -9,5 +9,7 @@ public class CuotasCobradasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuotas_cobradas);
+
+        setTitle("Cuotas Cobradas");
     }
 }

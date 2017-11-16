@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -87,7 +88,8 @@ public class MaterialActivity extends AppCompatActivity {
                                 withIconColor(getResources().getColor(R.color.primary)).
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
-                                withIcon(FontAwesome.Icon.faw_user),
+                                //withIcon(FontAwesome.Icon.faw_user),
+                                withIcon(R.drawable.clientes),
                         new PrimaryDrawerItem().
                                 withIdentifier(DRAWER_ITEM_DOS).
                                 withName(R.string.item_dos).
@@ -95,7 +97,8 @@ public class MaterialActivity extends AppCompatActivity {
                                 withIconColor(getResources().getColor(R.color.primary)).
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
-                                withIcon(FontAwesome.Icon.faw_newspaper_o),
+                                //withIcon(FontAwesome.Icon.faw_newspaper_o),
+                                withIcon(R.drawable.vencimientos),
                         new PrimaryDrawerItem().
                                 withIdentifier(DRAWER_ITEM_TRES).
                                 withName(R.string.item_tres).
@@ -103,13 +106,15 @@ public class MaterialActivity extends AppCompatActivity {
                                 withIconColor(getResources().getColor(R.color.primary)).
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
-                                withIcon(FontAwesome.Icon.faw_database)
+                                //withIcon(FontAwesome.Icon.faw_database)
+                                withIcon(R.drawable.cuotas_cobradas_3)
                 ).addStickyDrawerItems(
                         //Este item se encuentra en la parte inferior
                         new SecondaryDrawerItem()
                                 .withName(R.string.item_cuatro)
                                 .withIdentifier(DRAWER_ITEM_CUATRO)
-                                .withIcon(FontAwesome.Icon.faw_arrow_left)
+                                //.withIcon(FontAwesome.Icon.faw_arrow_left)
+                                .withIcon(R.drawable.salir)
                                 .withTextColor(getResources().getColor(R.color.primary))
                                 .withIconColor(getResources().getColor(R.color.primary))
                                 .withSelectedTextColor(getResources().getColor(R.color.colorAccent))
@@ -199,5 +204,40 @@ public class MaterialActivity extends AppCompatActivity {
                 drawer.openDrawer();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    //Este porcion de codigo me sirve para preguntar si deseo regresar al activity login y asi cerrar mi session
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            //super.finish();
+            AlertDialog.Builder Dialogo = new AlertDialog.Builder(MaterialActivity.this);
+            Dialogo.setTitle("Salir de la Aplicación");
+            Dialogo.setMessage("¿Está seguro de salir de la aplicación? ");
+            Dialogo.setIcon(R.drawable.info);
+
+            Dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //finish();
+
+                    finish();
+                    System.exit(0);
+
+                    /*Intent intent = new Intent(Intent.ACTION_MAIN);
+                    intent.addCategory(Intent.CATEGORY_HOME);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);*/
+                }
+            });
+            Dialogo.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            Dialogo.show();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
