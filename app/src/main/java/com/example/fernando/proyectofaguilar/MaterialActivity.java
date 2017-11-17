@@ -71,7 +71,7 @@ public class MaterialActivity extends AppCompatActivity {
                 .addProfiles(
                         new ProfileDrawerItem().
                                 withName(CuentaUsuario).
-                                withEmail("info@devfest.xyz")
+                                withEmail("developer@gmail.com")
                 )
                 .build();
 
