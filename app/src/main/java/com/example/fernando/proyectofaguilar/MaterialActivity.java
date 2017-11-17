@@ -33,6 +33,7 @@ public class MaterialActivity extends AppCompatActivity {
     private static final int DRAWER_ITEM_DOS = 2;
     private static final int DRAWER_ITEM_TRES = 3;
     private static final int DRAWER_ITEM_CUATRO = 4;
+    private static final int DRAWER_ITEM_CINCO = 5;
 
     //Definimos el entorno
     private Drawer drawer;
@@ -89,7 +90,7 @@ public class MaterialActivity extends AppCompatActivity {
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_user),
-                                withIcon(R.drawable.clientes),
+                                        withIcon(R.drawable.clientes),
                         new PrimaryDrawerItem().
                                 withIdentifier(DRAWER_ITEM_DOS).
                                 withName(R.string.item_dos).
@@ -98,7 +99,7 @@ public class MaterialActivity extends AppCompatActivity {
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_newspaper_o),
-                                withIcon(R.drawable.vencimientos),
+                                        withIcon(R.drawable.vencimientos),
                         new PrimaryDrawerItem().
                                 withIdentifier(DRAWER_ITEM_TRES).
                                 withName(R.string.item_tres).
@@ -107,12 +108,22 @@ public class MaterialActivity extends AppCompatActivity {
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_database)
-                                withIcon(R.drawable.cuotas_cobradas_3)
+                                        withIcon(R.drawable.cuotas_cobradas_3)
                 ).addStickyDrawerItems(
                         //Este item se encuentra en la parte inferior
                         new SecondaryDrawerItem()
                                 .withName(R.string.item_cuatro)
                                 .withIdentifier(DRAWER_ITEM_CUATRO)
+                                //.withIcon(FontAwesome.Icon.faw_arrow_left)
+                                .withIcon(R.drawable.users)
+                                .withTextColor(getResources().getColor(R.color.primary))
+                                .withIconColor(getResources().getColor(R.color.primary))
+                                .withSelectedTextColor(getResources().getColor(R.color.colorAccent))
+                                .withSelectedIconColor(getResources().getColor(R.color.colorAccent))
+                                .withCheckable(false),
+                        new SecondaryDrawerItem()
+                                .withName(R.string.item_cinco)
+                                .withIdentifier(DRAWER_ITEM_CINCO)
                                 //.withIcon(FontAwesome.Icon.faw_arrow_left)
                                 .withIcon(R.drawable.salir)
                                 .withTextColor(getResources().getColor(R.color.primary))
@@ -151,6 +162,11 @@ public class MaterialActivity extends AppCompatActivity {
                 Intent cuotasIntent = new Intent(context, CuotasCobradasActivity.class);
                 //cuotasIntent.putExtra("CuentaUsuario", lblCuentaUsuario.getText().toString());
                 startActivity(cuotasIntent);
+                break;
+            case 4:
+                Intent usersIntent = new Intent(context, UsuarioActivity.class);
+                //cuotasIntent.putExtra("CuentaUsuario", lblCuentaUsuario.getText().toString());
+                startActivity(usersIntent);
                 break;
             default:
                 AlertDialog.Builder Dialogo = new AlertDialog.Builder(MaterialActivity.this);

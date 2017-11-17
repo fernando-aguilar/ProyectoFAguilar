@@ -11,5 +11,6 @@
     <string name="item_uno">Clientes</string>
     <string name="item_dos">Vencimientos</string>
     <string name="item_tres">Cuotas Cobradas</string>
-    <string name="item_cuatro">Salir</string>
+    <string name="item_cuatro">Usuarios</string>
+    <string name="item_cinco">Salir</string>
 </resources>
