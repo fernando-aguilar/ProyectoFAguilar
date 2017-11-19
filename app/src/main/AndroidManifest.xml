@@ -26,7 +26,8 @@
             android:name=".MaterialActivity"
             android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
         <activity android:name=".UsuarioActivity" />
-        <activity android:name=".RegistrarUsuarioActivity"></activity>
+        <activity android:name=".RegistrarUsuarioActivity" />
+        <activity android:name=".ConsultarUsuarioActivity"></activity>
     </application>
 
 </manifest>

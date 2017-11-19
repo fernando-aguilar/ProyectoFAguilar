@@ -26,7 +26,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
     @Override
     //refresca los scripts
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXIST usuarios");
+        db.execSQL("DROP TABLE IF EXIST usuario");
         onCreate(db);
     }
 }

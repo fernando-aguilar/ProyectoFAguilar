@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.example.fernando.proyectofaguilar.Utilidades.Utilidades;
 
 public class RegistrarUsuarioActivity extends AppCompatActivity {
-    EditText campoID, campoCuenta, campoNombre, campoTelefono;
+    EditText txtDocumentoId, txtCuenta, txtNombre, txtTelefono;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +20,31 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
 
         setTitle("Registrar Usuario");
 
-        campoID = (EditText) findViewById(R.id.txtID);
-        campoCuenta = (EditText) findViewById(R.id.txtCuentaUsuario);
-        campoNombre = (EditText) findViewById(R.id.txtNombreUsuario);
-        campoTelefono = (EditText) findViewById(R.id.txtTelefonoUsuario);
+        txtDocumentoId = (EditText) findViewById(R.id.txtDocumentoId);
+        txtCuenta = (EditText) findViewById(R.id.txtCuentaUsuario);
+        txtNombre = (EditText) findViewById(R.id.txtNombreUsuario);
+        txtTelefono = (EditText) findViewById(R.id.txtTelefonoUsuario);
     }
 
     public void onClick(View view){
         registrarUsuarios();
+        //registrarUsuariosSQL();
+    }
+
+    private void registrarUsuariosSQL() {
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_usuarios", null, 1);
+        SQLiteDatabase db = conn.getWritableDatabase();
+
+        //insert into usuario (id, cuenta, nombre, telefono) values (123, 'faguilar', 'fernando aguilar', '78912112')
+        String insert = "INSERT INTO " + Utilidades.TABLA_USUARIO + " ("
+                                       + Utilidades.CAMPO_ID + ", " + Utilidades.CAMPO_CUENTA + ", " + Utilidades.CAMPO_NOMBRE + ", " + Utilidades.CAMPO_TELEFONO + ") "
+                                       + "VALUES ("
+                                       + txtDocumentoId.getText().toString() + ", '" + txtCuenta.getText().toString() + "', '" + txtNombre.getText().toString() + "', '" + txtTelefono.getText().toString() + "')";
+
+        db.execSQL(insert);
+        Toast.makeText(getApplicationContext(), "Registro exitoso !!", Toast.LENGTH_SHORT).show();
+
+        db.close();
     }
 
     private void registrarUsuarios() {
@@ -35,12 +52,15 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         SQLiteDatabase db = conn.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(Utilidades.CAMPO_ID, campoID.getText().toString());
-        values.put(Utilidades.CAMPO_CUENTA, campoCuenta.getText().toString());
-        values.put(Utilidades.CAMPO_NOMBRE, campoNombre.getText().toString());
-        values.put(Utilidades.CAMPO_TELEFONO, campoTelefono.getText().toString());
+        values.put(Utilidades.CAMPO_ID, txtDocumentoId.getText().toString());
+        values.put(Utilidades.CAMPO_CUENTA, txtCuenta.getText().toString());
+        values.put(Utilidades.CAMPO_NOMBRE, txtNombre.getText().toString());
+        values.put(Utilidades.CAMPO_TELEFONO, txtTelefono.getText().toString());
 
         Long idResultante = db.insert(Utilidades.TABLA_USUARIO, Utilidades.CAMPO_ID, values);
-        Toast.makeText(getApplicationContext(), "ID Registro: " + idResultante, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "ID Registro: " + idResultante, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Registro exitoso !!", Toast.LENGTH_SHORT).show();
+
+        db.close();
     }
 }

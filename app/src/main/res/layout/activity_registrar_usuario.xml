@@ -11,12 +11,12 @@
 
 
     <EditText
-        android:id="@+id/txtID"
+        android:id="@+id/txtDocumentoId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
         android:inputType="number"
-        android:hint="ID usuario"
+        android:hint="Documento Id"
         android:textSize="20sp"
         android:layout_marginTop="30dp"/>
 
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
-        android:hint="Cuenta usuario"
+        android:hint="Cuenta"
         android:textSize="20sp"
         android:layout_marginTop="10dp"/>
 
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:inputType="textPersonName"
-        android:hint="Nombre usuario"
+        android:hint="Nombre"
         android:textSize="20sp"
         android:layout_marginTop="10dp"/>
 
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:inputType="number"
-        android:hint="Teléfono usuario"
+        android:hint="Teléfono"
         android:textSize="20sp"
         android:layout_marginTop="10dp"/>
 

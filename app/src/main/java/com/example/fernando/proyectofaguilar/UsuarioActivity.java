@@ -17,15 +17,19 @@ public class UsuarioActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        Intent registrarusuarioIntent = null;
+        Intent usuarioIntent = null;
         switch (view.getId()){
             case R.id.btnRegistrarUsuario:
-                registrarusuarioIntent = new Intent(UsuarioActivity.this, RegistrarUsuarioActivity.class);
+                usuarioIntent = new Intent(UsuarioActivity.this, RegistrarUsuarioActivity.class);
+                break;
+
+            case R.id.btnConsultarUsuario:
+                usuarioIntent = new Intent(UsuarioActivity.this, ConsultarUsuarioActivity.class);
                 break;
         }
 
-        if (registrarusuarioIntent != null){
-            startActivity(registrarusuarioIntent);
+        if (usuarioIntent != null){
+            startActivity(usuarioIntent);
         }
     }
 }
