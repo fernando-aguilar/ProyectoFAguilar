@@ -26,6 +26,10 @@ public class UsuarioActivity extends AppCompatActivity {
             case R.id.btnConsultarUsuario:
                 usuarioIntent = new Intent(UsuarioActivity.this, ConsultarUsuarioActivity.class);
                 break;
+
+            case R.id.btnListarUsuarios:
+                usuarioIntent = new Intent(UsuarioActivity.this, ListarUsuariosActivity.class);
+                break;
         }
 
         if (usuarioIntent != null){

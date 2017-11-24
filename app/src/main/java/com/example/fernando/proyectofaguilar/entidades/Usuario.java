@@ -6,15 +6,19 @@ package com.example.fernando.proyectofaguilar.entidades;
 
 public class Usuario {
     private Integer id;
-    private String cuentausuario;
-    private String nombreusuario;
+    private String cuenta;
+    private String nombre;
     private String telefono;
 
-    public Usuario(Integer id, String cuentausuario, String nombreusuario, String telefono) {
+    public Usuario(Integer id, String cuenta, String nombre, String telefono) {
         this.id = id;
-        this.cuentausuario = cuentausuario;
-        this.nombreusuario = nombreusuario;
+        this.cuenta = cuenta;
+        this.nombre = nombre;
         this.telefono = telefono;
+    }
+
+    public Usuario(){
+
     }
 
     public Integer getId() {
@@ -25,20 +29,20 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getCuentausuario() {
-        return cuentausuario;
+    public String getCuenta() {
+        return cuenta;
     }
 
-    public void setCuentausuario(String cuentausuario) {
-        this.cuentausuario = cuentausuario;
+    public void setCuenta(String cuenta) {
+        this.cuenta = cuenta;
     }
 
-    public String getNombreusuario() {
-        return nombreusuario;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreusuario(String nombreusuario) {
-        this.nombreusuario = nombreusuario;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getTelefono() {

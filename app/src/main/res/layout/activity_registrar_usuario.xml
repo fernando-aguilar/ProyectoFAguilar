@@ -9,51 +9,62 @@
     android:paddingRight="15dp"
     tools:context="com.example.fernando.proyectofaguilar.RegistrarUsuarioActivity">
 
-
-    <EditText
-        android:id="@+id/txtDocumentoId"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:inputType="number"
-        android:hint="Documento Id"
-        android:textSize="20sp"
-        android:layout_marginTop="30dp"/>
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/txtCuentaUsuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:hint="Cuenta"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/txtNombreUsuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:inputType="textPersonName"
-        android:hint="Nombre"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"/>
+            <EditText
+                android:id="@+id/txtDocumentoId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:hint="Documento Id"
+                android:inputType="number"
+                android:text=""
+                android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/txtTelefonoUsuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:inputType="number"
-        android:hint="Teléfono"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"/>
+            <EditText
+                android:id="@+id/txtCuentaUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Cuenta"
+                android:text=""
+                android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btnRegistrarUsuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrar Usuario"
-        android:layout_marginTop="30dp"
-        android:onClick="onClick"/>
+            <EditText
+                android:id="@+id/txtNombreUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Nombre"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/txtTelefonoUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Teléfono"
+                android:inputType="number"
+                android:text=""
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnRegistrarUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="onClick"
+                android:text="Registrar Usuario" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
