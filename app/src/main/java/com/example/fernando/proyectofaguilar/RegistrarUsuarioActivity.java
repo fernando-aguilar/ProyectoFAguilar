@@ -1,29 +1,43 @@
 package com.example.fernando.proyectofaguilar;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.fernando.proyectofaguilar.Utilidades.Utilidades;
 
+import javax.security.auth.callback.Callback;
+
 public class RegistrarUsuarioActivity extends AppCompatActivity {
     EditText txtDocumentoId, txtCuenta, txtNombre, txtTelefono;
+
+    private static final String LOG = RegistrarUsuarioActivity.class.getSimpleName();
+    private Context context;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_usuario);
 
+        context = this;
         setTitle("Registrar Usuario");
 
         txtDocumentoId = (EditText) findViewById(R.id.txtDocumentoId);
         txtCuenta = (EditText) findViewById(R.id.txtCuentaUsuario);
         txtNombre = (EditText) findViewById(R.id.txtNombreUsuario);
         txtTelefono = (EditText) findViewById(R.id.txtTelefonoUsuario);
+
+        //Codigo para el boton de retroceso
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void onClick(View view){

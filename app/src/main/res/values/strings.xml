@@ -13,4 +13,7 @@
     <string name="item_tres">Cuotas Cobradas</string>
     <string name="item_cuatro">Usuarios</string>
     <string name="item_cinco">Salir</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

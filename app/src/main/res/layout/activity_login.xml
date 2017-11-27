@@ -10,14 +10,13 @@
     tools:context="com.example.fernando.proyectofaguilar.LoginActivity"
     android:weightSum="1">
 
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="305dp"
         android:layout_height="107dp"
         android:layout_gravity="center"
         app:srcCompat="@drawable/fundacion"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:layout_weight="0.10" />
 
     <EditText

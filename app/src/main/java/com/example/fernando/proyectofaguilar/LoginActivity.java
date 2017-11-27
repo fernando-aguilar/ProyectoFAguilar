@@ -2,6 +2,8 @@ package com.example.fernando.proyectofaguilar;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.menu.ActionMenuItemView;
@@ -10,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.example.fernando.proyectofaguilar.Utilidades.Utilidades;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -22,12 +26,18 @@ public class LoginActivity extends AppCompatActivity {
     private EditText txtClaveUsuario;
     private Button btnIngresar;
 
+    ConexionSQLiteHelper conn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        setTitle("Bienvenido");
+
         context = this;
+        conn = new ConexionSQLiteHelper(getApplicationContext(), "bd_usuarios", null, 1);
+
         lyLogin = (LinearLayout) findViewById(R.id.lyLogin);
         txtCuentaUsuario = (EditText) findViewById(R.id.txtCuentaUsuario);
         txtClaveUsuario = (EditText) findViewById(R.id.txtClaveUsuario);
@@ -39,18 +49,39 @@ public class LoginActivity extends AppCompatActivity {
                 String vpsCuentaUsuario = txtCuentaUsuario.getText().toString();
                 String vpsClaveUsuario = txtClaveUsuario.getText().toString();
 
-                if (vpsCuentaUsuario.equals(CUENTA_VALIDO) && vpsClaveUsuario.equals(CONTRASEÑA_VALIDO)) {
-                    //Toast.makeText(getApplicationContext(), getString(R.string.login_ok, vpsCuentaUsuario), Toast.LENGTH_SHORT).show();
+//                if (vpsCuentaUsuario.equals(CUENTA_VALIDO) && vpsClaveUsuario.equals(CONTRASEÑA_VALIDO)) {
+//                    //Toast.makeText(getApplicationContext(), getString(R.string.login_ok, vpsCuentaUsuario), Toast.LENGTH_SHORT).show();
+//
+//                    //Intent menuIntent = new Intent(context, MenuActivity.class);
+//                    //menuIntent.putExtra("CuentaUsuario", txtCuentaUsuario.getText().toString());
+//                    //startActivity(menuIntent);
+//
+//                    Intent principalIntent = new Intent(context, PrincipalActivity.class);
+//                    principalIntent.putExtra("CuentaUsuario", txtCuentaUsuario.getText().toString());
+//                    startActivity(principalIntent);
+//
+//                } else {
+//                    Toast.makeText(getApplicationContext(), getString(R.string.login_error), Toast.LENGTH_SHORT).show();
+//                    txtCuentaUsuario.requestFocus();
+//                }
 
-                    //Intent menuIntent = new Intent(context, MenuActivity.class);
-                    //menuIntent.putExtra("CuentaUsuario", txtCuentaUsuario.getText().toString());
-                    //startActivity(menuIntent);
+                SQLiteDatabase db = conn.getReadableDatabase();
+                //String[] parametrosConsulta = {vpsClaveUsuario};
+                String[] parametrosConsulta = {vpsCuentaUsuario, vpsClaveUsuario};
+                String[] campos = {Utilidades.CAMPO_CUENTA, Utilidades.CAMPO_NOMBRE, Utilidades.CAMPO_TELEFONO};
 
-                    Intent materialIntent = new Intent(context, MaterialActivity.class);
-                    materialIntent.putExtra("CuentaUsuario", txtCuentaUsuario.getText().toString());
-                    startActivity(materialIntent);
+                try {
+                    //Cursor cursor = db.query(Utilidades.TABLA_USUARIO, campos, Utilidades.CAMPO_ID + "=?", parametrosConsulta, null, null, null);
+                    Cursor cursor = db.query(Utilidades.TABLA_USUARIO, campos, Utilidades.CAMPO_CUENTA + "=? AND " + Utilidades.CAMPO_ID + "=?", parametrosConsulta, null, null, null);
+                    cursor.moveToFirst();
 
-                } else {
+                    Intent principalIntent = new Intent(context, PrincipalActivity.class);
+                    principalIntent.putExtra("CuentaUsuario", cursor.getString(0));
+                    startActivity(principalIntent);
+
+                    cursor.close();
+
+                } catch (Exception e) {
                     Toast.makeText(getApplicationContext(), getString(R.string.login_error), Toast.LENGTH_SHORT).show();
                     txtCuentaUsuario.requestFocus();
                 }

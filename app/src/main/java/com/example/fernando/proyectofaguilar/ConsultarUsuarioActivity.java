@@ -1,10 +1,12 @@
 package com.example.fernando.proyectofaguilar;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,17 +17,27 @@ public class ConsultarUsuarioActivity extends AppCompatActivity {
     EditText txtDocumentoId, txtCuenta, txtNombre, txtTelefono;
     ConexionSQLiteHelper conn;
 
+    private static final String LOG = ConsultarUsuarioActivity.class.getSimpleName();
+    private Context context;
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consultar_usuario);
 
+        context = this;
         conn = new ConexionSQLiteHelper(getApplicationContext(), "bd_usuarios", null, 1);
 
         txtDocumentoId = (EditText) findViewById(R.id.txtDocumentoId);
         txtCuenta = (EditText) findViewById(R.id.txtCuentaUsuario);
         txtNombre = (EditText) findViewById(R.id.txtNombreUsuario);
         txtTelefono = (EditText) findViewById(R.id.txtTelefonoUsuario);
+
+        //Codigo para el boton de retroceso
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void onClick(View view) {

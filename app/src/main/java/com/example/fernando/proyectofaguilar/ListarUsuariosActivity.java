@@ -1,11 +1,13 @@
 package com.example.fernando.proyectofaguilar;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
 import com.example.fernando.proyectofaguilar.Utilidades.Utilidades;
 import com.example.fernando.proyectofaguilar.adaptadores.ListaPersonasAdapter;
@@ -14,16 +16,20 @@ import com.example.fernando.proyectofaguilar.entidades.Usuario;
 import java.util.ArrayList;
 
 public class ListarUsuariosActivity extends AppCompatActivity {
-
     ArrayList<Usuario> listaUsuario;
     RecyclerView recyclerViewUsuarios;
-
     ConexionSQLiteHelper conn;
+
+    private static final String LOG = ListarUsuariosActivity.class.getSimpleName();
+    private Context context;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_usuarios);
+
+        context = this;
 
         conn = new ConexionSQLiteHelper(getApplicationContext(), "bd_usuarios", null, 1);
         listaUsuario = new ArrayList<>();
@@ -35,6 +41,11 @@ public class ListarUsuariosActivity extends AppCompatActivity {
 
         ListaPersonasAdapter adapter = new ListaPersonasAdapter(listaUsuario);
         recyclerViewUsuarios.setAdapter(adapter);
+
+        //Codigo para el boton de retroceso
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void consultarListaPersonas() {
