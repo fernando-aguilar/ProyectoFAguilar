@@ -89,7 +89,7 @@ public class PrincipalActivity extends AppCompatActivity {
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_user),
-                                        withIcon(R.drawable.clientes),
+                                        withIcon(R.drawable.customers),
                         new PrimaryDrawerItem().
                                 withIdentifier(DRAWER_ITEM_DOS).
                                 withName(R.string.item_dos).
@@ -98,7 +98,7 @@ public class PrincipalActivity extends AppCompatActivity {
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_newspaper_o),
-                                        withIcon(R.drawable.vencimientos),
+                                        withIcon(R.drawable.clock_1),
                         new PrimaryDrawerItem().
                                 withIdentifier(DRAWER_ITEM_TRES).
                                 withName(R.string.item_tres).
@@ -107,7 +107,7 @@ public class PrincipalActivity extends AppCompatActivity {
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_database)
-                                        withIcon(R.drawable.cuotas_cobradas_3)
+                                        withIcon(R.drawable.money_1)
                 ).addStickyDrawerItems(
                         //Este item se encuentra en la parte inferior
                         new SecondaryDrawerItem()
