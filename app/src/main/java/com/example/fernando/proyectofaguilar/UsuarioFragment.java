@@ -1,4 +1,4 @@
-package layout;
+package com.example.fernando.proyectofaguilar;
 
 import android.content.Context;
 import android.content.Intent;

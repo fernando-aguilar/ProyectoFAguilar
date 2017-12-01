@@ -6,7 +6,7 @@
     android:layout_marginTop="15dp"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    tools:context="layout.UsuarioFragment">
+    tools:context=".UsuarioFragment">
 
     <Button
     android:id="@+id/btnRegistrarUsuario"
