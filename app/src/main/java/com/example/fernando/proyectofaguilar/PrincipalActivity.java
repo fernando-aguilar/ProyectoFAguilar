@@ -124,7 +124,7 @@ public class PrincipalActivity extends AppCompatActivity {
                                 .withName(R.string.item_cinco)
                                 .withIdentifier(DRAWER_ITEM_CINCO)
                                 //.withIcon(FontAwesome.Icon.faw_arrow_left)
-                                .withIcon(R.drawable.salir)
+                                .withIcon(R.drawable.exit_1)
                                 .withTextColor(getResources().getColor(R.color.primary))
                                 .withIconColor(getResources().getColor(R.color.primary))
                                 .withSelectedTextColor(getResources().getColor(R.color.colorAccent))
