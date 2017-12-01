@@ -174,7 +174,6 @@ public class PrincipalActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //finish();
-
                         finish();
                         System.exit(0);
                     }
