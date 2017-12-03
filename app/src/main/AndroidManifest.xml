@@ -24,7 +24,6 @@
         <activity android:name=".CuotasCobradasActivity" />
         <activity android:name=".MaterialActivity" />
         <activity android:name=".UsuarioActivity" />
-
         <activity
             android:name=".RegistrarUsuarioActivity"
             android:parentActivityName=".UsuarioActivity" />
@@ -34,8 +33,10 @@
         <activity
             android:name=".ListarUsuariosActivity"
             android:parentActivityName=".UsuarioActivity" />
-
-        <activity android:name=".PrincipalActivity"></activity>
+        <activity android:name=".PrincipalActivity" />
+        <activity android:name=".RegistrarClienteActivity" />
+        <activity android:name=".ConsultarClienteActivity" />
+        <activity android:name=".ListarClientesActivity"></activity>
     </application>
 
 </manifest>

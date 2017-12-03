@@ -89,7 +89,7 @@ public class PrincipalActivity extends AppCompatActivity {
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_user),
-                                        withIcon(R.drawable.customers),
+                                        withIcon(R.drawable.clients_3),
                         new PrimaryDrawerItem().
                                 withIdentifier(DRAWER_ITEM_DOS).
                                 withName(R.string.item_dos).
@@ -98,7 +98,7 @@ public class PrincipalActivity extends AppCompatActivity {
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_newspaper_o),
-                                        withIcon(R.drawable.clock_1),
+                                        withIcon(R.drawable.clock_3),
                         new PrimaryDrawerItem().
                                 withIdentifier(DRAWER_ITEM_TRES).
                                 withName(R.string.item_tres).
@@ -107,14 +107,14 @@ public class PrincipalActivity extends AppCompatActivity {
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_database)
-                                        withIcon(R.drawable.money_1)
+                                        withIcon(R.drawable.money_3)
                 ).addStickyDrawerItems(
                         //Este item se encuentra en la parte inferior
                         new SecondaryDrawerItem()
                                 .withName(R.string.item_cuatro)
                                 .withIdentifier(DRAWER_ITEM_CUATRO)
                                 //.withIcon(FontAwesome.Icon.faw_arrow_left)
-                                .withIcon(R.drawable.users)
+                                .withIcon(R.drawable.users_2)
                                 .withTextColor(getResources().getColor(R.color.primary))
                                 .withIconColor(getResources().getColor(R.color.primary))
                                 .withSelectedTextColor(getResources().getColor(R.color.colorAccent))
@@ -124,7 +124,7 @@ public class PrincipalActivity extends AppCompatActivity {
                                 .withName(R.string.item_cinco)
                                 .withIdentifier(DRAWER_ITEM_CINCO)
                                 //.withIcon(FontAwesome.Icon.faw_arrow_left)
-                                .withIcon(R.drawable.exit_1)
+                                .withIcon(R.drawable.exit_3)
                                 .withTextColor(getResources().getColor(R.color.primary))
                                 .withIconColor(getResources().getColor(R.color.primary))
                                 .withSelectedTextColor(getResources().getColor(R.color.colorAccent))
@@ -153,6 +153,7 @@ public class PrincipalActivity extends AppCompatActivity {
         //Toast.makeText(context,"Selecciono el item N "+i,Toast.LENGTH_LONG).show();
         switch (i) {
             case DRAWER_ITEM_UNO:
+                seleccionado = new ClienteFragment();
                 break;
             case DRAWER_ITEM_DOS:
                 break;
