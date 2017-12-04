@@ -28,23 +28,23 @@
             android:paddingLeft="15dp"
             android:paddingRight="15dp">
 
-            <!--<EditText-->
-                <!--android:id="@+id/txtDocumentoId"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="30dp"-->
-                <!--android:hint="Número de cédula de identidad"-->
-                <!--android:inputType="number"-->
-                <!--android:text=""-->
-                <!--android:textSize="20sp" />-->
-
             <EditText
                 android:id="@+id/txtNombreCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:hint="Nombre cliente"
                 android:inputType="textPersonName"
+                android:text=""
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/txtDocumentoCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Número de CI o NIT"
+                android:inputType="number"
                 android:text=""
                 android:textSize="20sp" />
 
@@ -56,6 +56,22 @@
                 android:hint="Email cliente"
                 android:text=""
                 android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/txtFechaNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Fecha nacimiento"
+                android:text=""
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/ddlSexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:entries="@array/sexo" />
 
             <Button
                 android:id="@+id/btnRegistrarCliente"
