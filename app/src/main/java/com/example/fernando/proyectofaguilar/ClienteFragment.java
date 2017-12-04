@@ -49,7 +49,7 @@ public class ClienteFragment extends Fragment{
         btnRegistrarCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, RegistrarUsuarioActivity.class);
+                Intent intent = new Intent(context, RegistrarClienteActivity.class);
                 startActivity(intent);
             }
         });
@@ -57,7 +57,7 @@ public class ClienteFragment extends Fragment{
         btnConsultarCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ConsultarUsuarioActivity.class);
+                Intent intent = new Intent(context, ConsultarClienteActivity.class);
                 startActivity(intent);
             }
         });
@@ -65,7 +65,7 @@ public class ClienteFragment extends Fragment{
         btnListarCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ListarUsuariosActivity.class);
+                Intent intent = new Intent(context, ListarClientesActivity.class);
                 startActivity(intent);
             }
         });

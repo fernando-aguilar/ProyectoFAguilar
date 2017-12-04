@@ -28,42 +28,32 @@
             android:paddingLeft="15dp"
             android:paddingRight="15dp">
 
-            <EditText
-                android:id="@+id/txtDocumentoId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:hint="Documento Id"
-                android:inputType="number"
-                android:text=""
-                android:textSize="20sp" />
+            <!--<EditText-->
+                <!--android:id="@+id/txtDocumentoId"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--android:hint="Número de cédula de identidad"-->
+                <!--android:inputType="number"-->
+                <!--android:text=""-->
+                <!--android:textSize="20sp" />-->
 
             <EditText
                 android:id="@+id/txtNombreCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="Nombre(s)"
+                android:hint="Nombre cliente"
                 android:inputType="textPersonName"
                 android:text=""
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/txtApellidosCliente"
+                android:id="@+id/txtCorreoCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="Apellidos(s)"
-                android:text=""
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/txtTelefonoCliente"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="Teléfono"
-                android:inputType="number"
+                android:hint="Email cliente"
                 android:text=""
                 android:textSize="20sp" />
 

@@ -26,15 +26,17 @@
         <activity android:name=".UsuarioActivity" />
         <activity
             android:name=".RegistrarUsuarioActivity"
-            android:parentActivityName=".UsuarioActivity" />
+            android:parentActivityName=".PrincipalActivity" />
         <activity
             android:name=".ConsultarUsuarioActivity"
-            android:parentActivityName=".UsuarioActivity" />
+            android:parentActivityName=".PrincipalActivity" />
         <activity
             android:name=".ListarUsuariosActivity"
-            android:parentActivityName=".UsuarioActivity" />
+            android:parentActivityName=".PrincipalActivity" />
         <activity android:name=".PrincipalActivity" />
-        <activity android:name=".RegistrarClienteActivity" />
+        <activity
+            android:name=".RegistrarClienteActivity"
+            android:parentActivityName=".PrincipalActivity" />
         <activity android:name=".ConsultarClienteActivity" />
         <activity android:name=".ListarClientesActivity"></activity>
     </application>

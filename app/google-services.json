@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "631627914143",
+    "firebase_url": "https://fir-faguilar.firebaseio.com",
+    "project_id": "fir-faguilar",
+    "storage_bucket": "fir-faguilar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631627914143:android:9798236281984fa0",
+        "android_client_info": {
+          "package_name": "com.example.fernando.proyectofaguilar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631627914143-hin524i82im5m7q70q0ru4964e6s6hsc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fernando.proyectofaguilar",
+            "certificate_hash": "6f9f30add3d7e87e32aa2d4a2f95421f52f802ca"
+          }
+        },
+        {
+          "client_id": "631627914143-75qk7heklas2qp7nifr36jpvndki37tp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmYYFYpMHnxBk0NWxeYZRX_uaQoifa6EI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631627914143-75qk7heklas2qp7nifr36jpvndki37tp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
