@@ -36,8 +36,8 @@ public class ClienteFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_cliente, container, false);
 
         btnRegistrarCliente = (Button) view.findViewById(R.id.btnRegistrarCliente);
-        btnConsultarCliente = (Button) view.findViewById(R.id.btnConsultarCliente);
-        btnListarCliente = (Button) view.findViewById(R.id.btnListarClientes);
+        //btnConsultarCliente = (Button) view.findViewById(R.id.btnConsultarCliente);
+        //btnListarCliente = (Button) view.findViewById(R.id.btnListarClientes);
 
         return view;
     }
@@ -54,20 +54,20 @@ public class ClienteFragment extends Fragment{
             }
         });
 
-        btnConsultarCliente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, ConsultarClienteActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btnListarCliente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, ListarClientesActivity.class);
-                startActivity(intent);
-            }
-        });
+//        btnConsultarCliente.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(context, ConsultarClienteActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        btnListarCliente.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(context, ListarClientesActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }

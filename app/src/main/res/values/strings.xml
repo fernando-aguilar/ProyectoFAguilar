@@ -17,8 +17,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <array name="sexo">
-        <item>Hombre</item>
-        <item>Mujer</item>
+    <array name="estado_civil">
+        <item>Soltero/a</item>
+        <item>Casado/a</item>
+        <item>Divoriciado/a</item>
+        <item>Viudo/a</item>
     </array>
 </resources>

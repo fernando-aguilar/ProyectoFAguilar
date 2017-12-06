@@ -14,18 +14,18 @@
         android:onClick="onClick"
         android:text="Registrar Cliente" />
 
-    <Button
-        android:id="@+id/btnConsultarCliente"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onClick"
-        android:text="Consultar Cliente" />
+    <!--<Button-->
+        <!--android:id="@+id/btnConsultarCliente"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="onClick"-->
+        <!--android:text="Consultar Cliente" />-->
 
-    <Button
-        android:id="@+id/btnListarClientes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onClick"
-        android:text="Listar Clientes" />
+    <!--<Button-->
+        <!--android:id="@+id/btnListarClientes"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="onClick"-->
+        <!--android:text="Listar Clientes" />-->
 
 </LinearLayout>

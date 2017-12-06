@@ -26,25 +26,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="15dp"
-            android:paddingRight="15dp">
+            android:paddingRight="15dp"
+            android:weightSum="1">
 
             <EditText
                 android:id="@+id/txtNombreCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:hint="Nombre cliente"
                 android:inputType="textPersonName"
-                android:text=""
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/txtDocumentoCliente"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:hint="Número de CI o NIT"
-                android:inputType="number"
                 android:text=""
                 android:textSize="20sp" />
 
@@ -67,20 +58,32 @@
                 android:textSize="20sp" />
 
             <Spinner
-                android:id="@+id/ddlSexo"
+                android:id="@+id/ddlEstadoCivil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:entries="@array/sexo" />
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:entries="@array/estado_civil"
+                android:spinnerMode="dialog" />
 
             <Button
                 android:id="@+id/btnRegistrarCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="5dp"
                 android:onClick="onClick"
                 android:text="Registrar Cliente" />
 
         </LinearLayout>
     </ScrollView>
+
+    <ListView
+        android:id="@+id/listViewClientes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"/>
 </LinearLayout>

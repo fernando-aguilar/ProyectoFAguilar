@@ -9,15 +9,21 @@ public class Cliente {
     String nombreCliente;
     String emailCliente;
 
+    String fechaNacimiento;
+    String estadoCivil;
+
     public Cliente(){
 
     }
 
     //Alt + Insert
-    public Cliente(String idCliente, String nombreCliente, String emailCliente) {
+    public Cliente(String idCliente, String nombreCliente, String emailCliente, String fechaNacimiento, String estadoCivil) {
         this.idCliente = idCliente;
         this.nombreCliente = nombreCliente;
         this.emailCliente = emailCliente;
+
+        this.fechaNacimiento = fechaNacimiento;
+        this.estadoCivil = estadoCivil;
     }
 
     public String getIdCliente() {
@@ -42,6 +48,22 @@ public class Cliente {
 
     public void setEmailCliente(String emailCliente) {
         this.emailCliente = emailCliente;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
     }
 }
 

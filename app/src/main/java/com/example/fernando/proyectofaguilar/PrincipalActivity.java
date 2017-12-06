@@ -143,8 +143,8 @@ public class PrincipalActivity extends AppCompatActivity {
                 .withSavedInstance(savedInstanceState)
                 .build();
 
-        //Al inicializar se selecciona el primer item
-        seleccionartItem(DRAWER_ITEM_UNO);
+//        //Al inicializar se selecciona el primer item
+//        seleccionartItem(DRAWER_ITEM_UNO);
     }
 
     //Funcion de seleccion de item
