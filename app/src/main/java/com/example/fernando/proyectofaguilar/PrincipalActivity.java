@@ -153,13 +153,16 @@ public class PrincipalActivity extends AppCompatActivity {
         //Toast.makeText(context,"Selecciono el item N "+i,Toast.LENGTH_LONG).show();
         switch (i) {
             case DRAWER_ITEM_UNO:
-                seleccionado = new ClienteFragment();
+                //Llamada a Intent
+                Intent clientesIntent = new Intent(context, RegistrarClienteActivity.class);
+                startActivity(clientesIntent);
                 break;
             case DRAWER_ITEM_DOS:
                 break;
             case DRAWER_ITEM_TRES:
                 break;
             case DRAWER_ITEM_CUATRO:
+                //Llamada a fragment
                 seleccionado = new UsuarioFragment();
                 break;
             default:

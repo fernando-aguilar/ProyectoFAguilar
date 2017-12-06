@@ -22,7 +22,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".CuotasCobradasActivity" />
-        <activity android:name=".MaterialActivity" />
         <activity android:name=".UsuarioActivity" />
         <activity
             android:name=".RegistrarUsuarioActivity"
