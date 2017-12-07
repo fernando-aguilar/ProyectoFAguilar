@@ -3,11 +3,14 @@ package com.example.fernando.proyectofaguilar;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.support.annotation.IdRes;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -94,13 +97,6 @@ public class RegistrarClienteActivity extends AppCompatActivity {
         listViewClientes = (ListView) findViewById(R.id.listViewClientes);
         clienteList = new ArrayList<>();
 
-        btnRegistrarCliente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                adicionarCliente();
-            }
-        });
-
         txtFechaNacimiento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,6 +108,25 @@ public class RegistrarClienteActivity extends AppCompatActivity {
                 showDialog(DATE_DIALOG_ID);
             }
         });
+
+        btnRegistrarCliente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adicionarCliente();
+            }
+        });
+
+        listViewClientes.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Cliente cliente = clienteList.get(position);
+                showUpdateDialog(cliente.getIdCliente(), cliente.getNombreCliente(), cliente.getEmailCliente(), cliente.getFechaNacimiento(), cliente.getEstadoCivil());
+
+                return false;
+            }
+        });
+
     }
 
     @Override
@@ -123,7 +138,7 @@ public class RegistrarClienteActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 clienteList.clear();
 
-                for(DataSnapshot clienteSnapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot clienteSnapshot : dataSnapshot.getChildren()) {
                     Cliente cliente = clienteSnapshot.getValue(Cliente.class);
 
                     clienteList.add(cliente);
@@ -157,4 +172,53 @@ public class RegistrarClienteActivity extends AppCompatActivity {
         }
     }
 
+    private boolean modificarCliente(String id, String nombreCliente, String emailCliente, String fechaNacimento, String estadoCivil){
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("clientes").child(id);
+
+        Cliente cliente = new Cliente(id, nombreCliente, emailCliente, fechaNacimento, estadoCivil);
+        databaseReference.setValue(cliente);
+
+        Toast.makeText(context, "La información del cliente se actualizó exitosamente !!", Toast.LENGTH_LONG).show();
+
+        return  true;
+    }
+
+    //Modificar datos cliente
+    private void showUpdateDialog(final String idCliente, String nombreCliente, String emailCliente, String fechaNacimiento, String estadoCivil) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+
+        final View dialogView = inflater.inflate(R.layout.update_dialog, null);
+        dialogBuilder.setView(dialogView);
+
+        final EditText txtNombre = (EditText) dialogView.findViewById(R.id.txtNombre);
+        final EditText txtEmail = (EditText) dialogView.findViewById(R.id.txtEmail);
+        final EditText txtFecNacimiento = (EditText) dialogView.findViewById(R.id.txtFecNacimiento);
+        final Spinner ddlEstCivil = (Spinner) dialogView.findViewById(R.id.ddlEstCivil);
+        final Button btnUpdate = (Button) dialogView.findViewById(R.id.btnUpdate);
+
+        dialogBuilder.setTitle("Cliente: " + nombreCliente);
+        final AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nombre = txtNombre.getText().toString().trim();
+                String email = txtEmail.getText().toString().trim();
+                String fechanacimiento = txtFecNacimiento.getText().toString().trim();
+                String estadocivil = ddlEstCivil.getSelectedItem().toString();
+
+                if(TextUtils.isEmpty(nombre)){
+                    txtNombre.setError("nombre requerido");
+                    return;
+                }
+
+                modificarCliente(idCliente, nombre, email, fechanacimiento, estadocivil);
+                alertDialog.dismiss();
+            }
+        });
+
+
+    }
 }

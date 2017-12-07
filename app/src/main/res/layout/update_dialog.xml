@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textAlignment="center"
+        android:text="Modificar Datos Cliente"
+        android:textSize="15sp"
+        android:layout_marginBottom="25dp"
+        android:id="@+id/lblDatosCliente"/>
+
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Ingrese el nuevo nombre" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Ingrese el nuevo email cliente"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/txtFecNacimiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Fecha nacimiento"
+        android:text="" />
+
+    <Spinner
+        android:id="@+id/ddlEstCivil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:entries="@array/estado_civil"
+        android:spinnerMode="dialog" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:id="@+id/btnUpdate"/>
+
+</LinearLayout>
