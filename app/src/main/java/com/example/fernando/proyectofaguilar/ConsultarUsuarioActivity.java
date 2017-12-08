@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -56,11 +57,18 @@ public class ConsultarUsuarioActivity extends AppCompatActivity {
     }
 
     private void consultarUsuario() {
+        if(TextUtils.isEmpty(txtDocumentoId.getText().toString().trim())){
+            txtDocumentoId.setError("Debe ingresar un número de identidad");
+            txtDocumentoId.requestFocus();
+            return;
+        }
+
         SQLiteDatabase db = conn.getReadableDatabase();
         String[] parametrosConsulta = {txtDocumentoId.getText().toString()};
         String[] campos = {Utilidades.CAMPO_CUENTA, Utilidades.CAMPO_NOMBRE, Utilidades.CAMPO_TELEFONO};
 
         try {
+
             Cursor cursor = db.query(Utilidades.TABLA_USUARIO, campos, Utilidades.CAMPO_ID + "=?", parametrosConsulta, null, null, null);
             cursor.moveToFirst();
             txtCuenta.setText(cursor.getString(0));
@@ -86,6 +94,24 @@ public class ConsultarUsuarioActivity extends AppCompatActivity {
     }
 
     private void actualizarUsuario() {
+        if(TextUtils.isEmpty(txtDocumentoId.getText().toString().trim())){
+            txtDocumentoId.setError("El documento de identidad es requerido");
+            txtDocumentoId.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(txtCuenta.getText().toString().trim())){
+            txtCuenta.setError("La cuenta de usuario es requerida");
+            txtCuenta.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(txtNombre.getText().toString().trim())){
+            txtNombre.setError("El nombre de usuario es requerido");
+            txtNombre.requestFocus();
+            return;
+        }
+
         SQLiteDatabase db = conn.getWritableDatabase();
         String[] parametros = {txtDocumentoId.getText().toString()};
         ContentValues values = new ContentValues();
@@ -96,6 +122,8 @@ public class ConsultarUsuarioActivity extends AppCompatActivity {
         db.update(Utilidades.TABLA_USUARIO, values, Utilidades.CAMPO_ID + "=?", parametros);
         Toast.makeText(getApplicationContext(), "La información del usuario se actualizó correctamente", Toast.LENGTH_LONG).show();
         db.close();
+
+        limpiarControles();
     }
 
     private void limpiarControles() {

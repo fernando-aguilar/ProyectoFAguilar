@@ -84,30 +84,30 @@ public class PrincipalActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().
                                 withIdentifier(DRAWER_ITEM_UNO).
                                 withName(R.string.item_uno).
-                                withTextColor(getResources().getColor(R.color.primary)).
+                                withTextColor(getResources().getColor(R.color.colorPrimaryDark)).
                                 withIconColor(getResources().getColor(R.color.primary)).
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_user),
-                                        withIcon(R.drawable.clients_3),
+                                        withIcon(R.drawable.clientes),
                         new PrimaryDrawerItem().
                                 withIdentifier(DRAWER_ITEM_DOS).
                                 withName(R.string.item_dos).
-                                withTextColor(getResources().getColor(R.color.primary)).
+                                withTextColor(getResources().getColor(R.color.colorPrimaryDark)).
                                 withIconColor(getResources().getColor(R.color.primary)).
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_newspaper_o),
-                                        withIcon(R.drawable.clock_3),
+                                        withIcon(R.drawable.clock_2),
                         new PrimaryDrawerItem().
                                 withIdentifier(DRAWER_ITEM_TRES).
                                 withName(R.string.item_tres).
-                                withTextColor(getResources().getColor(R.color.primary)).
+                                withTextColor(getResources().getColor(R.color.colorPrimaryDark)).
                                 withIconColor(getResources().getColor(R.color.primary)).
                                 withSelectedTextColor(getResources().getColor(R.color.colorAccent)).
                                 withSelectedIconColor(getResources().getColor(R.color.colorAccent)).
                                 //withIcon(FontAwesome.Icon.faw_database)
-                                        withIcon(R.drawable.money_3)
+                                        withIcon(R.drawable.cuotas_cobradas_3)
                 ).addStickyDrawerItems(
                         //Este item se encuentra en la parte inferior
                         new SecondaryDrawerItem()
@@ -115,7 +115,7 @@ public class PrincipalActivity extends AppCompatActivity {
                                 .withIdentifier(DRAWER_ITEM_CUATRO)
                                 //.withIcon(FontAwesome.Icon.faw_arrow_left)
                                 .withIcon(R.drawable.users_2)
-                                .withTextColor(getResources().getColor(R.color.primary))
+                                .withTextColor(getResources().getColor(R.color.colorPrimaryDark))
                                 .withIconColor(getResources().getColor(R.color.primary))
                                 .withSelectedTextColor(getResources().getColor(R.color.colorAccent))
                                 .withSelectedIconColor(getResources().getColor(R.color.colorAccent))
@@ -124,8 +124,8 @@ public class PrincipalActivity extends AppCompatActivity {
                                 .withName(R.string.item_cinco)
                                 .withIdentifier(DRAWER_ITEM_CINCO)
                                 //.withIcon(FontAwesome.Icon.faw_arrow_left)
-                                .withIcon(R.drawable.exit_3)
-                                .withTextColor(getResources().getColor(R.color.primary))
+                                .withIcon(R.drawable.salir)
+                                .withTextColor(getResources().getColor(R.color.colorPrimaryDark))
                                 .withIconColor(getResources().getColor(R.color.primary))
                                 .withSelectedTextColor(getResources().getColor(R.color.colorAccent))
                                 .withSelectedIconColor(getResources().getColor(R.color.colorAccent))
@@ -226,7 +226,6 @@ public class PrincipalActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //finish();
-
                 finish();
                 System.exit(0);
 

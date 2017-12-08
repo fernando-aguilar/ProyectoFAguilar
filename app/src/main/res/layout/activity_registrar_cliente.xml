@@ -45,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:hint="Email cliente"
+                android:inputType="textEmailAddress"
                 android:text=""
                 android:textSize="20sp" />
 
@@ -54,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:hint="Fecha nacimiento"
+                android:inputType="date"
                 android:text=""
                 android:textSize="20sp" />
 

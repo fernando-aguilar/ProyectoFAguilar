@@ -1,57 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="20dp"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:textAlignment="center"
-        android:text="Modificar Datos Cliente"
-        android:textSize="15sp"
-        android:layout_marginBottom="25dp"
-        android:id="@+id/lblDatosCliente"/>
-
-    <EditText
-        android:id="@+id/txtNombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Ingrese el nuevo nombre" />
+    <!--<TextView-->
+    <!--android:id="@+id/lblDatosCliente"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="25dp"-->
+    <!--android:text="Modificar Datos Cliente"-->
+    <!--android:textAlignment="center"-->
+    <!--android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"-->
+    <!--android:textSize="15sp" />-->
 
     <EditText
-        android:id="@+id/txtEmail"
+        android:id="@+id/edtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el nuevo nombre"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:hint="Ingrese el nuevo email cliente"
+        android:hint="Ingrese el nuevo email"
+        android:inputType="textEmailAddress"
         android:text="" />
 
     <EditText
-        android:id="@+id/txtFecNacimiento"
+        android:id="@+id/edtFechaNacimiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="Fecha nacimiento"
+        android:inputType="date"
         android:text="" />
 
     <Spinner
-        android:id="@+id/ddlEstCivil"
+        android:id="@+id/spiEstadoCivil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
         android:entries="@array/estado_civil"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
         android:spinnerMode="dialog" />
 
     <Button
+        android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update"
-        android:id="@+id/btnUpdate"/>
+        android:text="Modificar Cliente" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar Cliente" />
 
 </LinearLayout>
