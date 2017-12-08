@@ -3,9 +3,11 @@ package com.example.fernando.proyectofaguilar;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,7 +29,7 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registrar_usuario);
 
         context = this;
-        setTitle("Registrar Usuario");
+        setTitle("Registrar Usuario (SQLite)");
 
         txtDocumentoId = (EditText) findViewById(R.id.txtDocumentoId);
         txtCuenta = (EditText) findViewById(R.id.txtCuentaUsuario);
@@ -41,8 +43,20 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        registrarUsuarios();
-        //registrarUsuariosSQL();
+        try {
+            registrarUsuarios();
+            //registrarUsuariosSQL();
+        }catch (Exception e){
+            //Toast.makeText(getApplicationContext(), "pone un número!!", Toast.LENGTH_SHORT).show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(RegistrarUsuarioActivity.this);
+            builder.setIcon(R.drawable.error).
+                    setTitle("Mensaje").
+                    setMessage("Se ha producido un error al momento de registrar del usuario");
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+
+        };
     }
 
     private void registrarUsuariosSQL() {
@@ -62,6 +76,24 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
     }
 
     private void registrarUsuarios() {
+        if(TextUtils.isEmpty(txtDocumentoId.getText().toString().trim())){
+            txtDocumentoId.setError("El documento de identidad es requerido");
+            txtDocumentoId.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(txtCuenta.getText().toString().trim())){
+            txtCuenta.setError("La cuenta de usuario es requerida");
+            txtCuenta.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(txtNombre.getText().toString().trim())){
+            txtNombre.setError("El nombre de usuario es requerido");
+            txtNombre.requestFocus();
+            return;
+        }
+
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_usuarios", null, 1);
         SQLiteDatabase db = conn.getWritableDatabase();
 
@@ -72,9 +104,23 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
         values.put(Utilidades.CAMPO_TELEFONO, txtTelefono.getText().toString());
 
         Long idResultante = db.insert(Utilidades.TABLA_USUARIO, Utilidades.CAMPO_ID, values);
-        //Toast.makeText(getApplicationContext(), "ID Registro: " + idResultante, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getApplicationContext(), "Registro exitoso !!", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "La información del usuario se registro exitosamente !!!", Toast.LENGTH_SHORT).show();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(RegistrarUsuarioActivity.this);
+        builder.setIcon(R.drawable.ok3).
+        setTitle("Mensaje").
+        setMessage("La información del usuario se registro exitosamente");
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
 
         db.close();
+        spLimpiarControles();
+    }
+
+    private  void spLimpiarControles(){
+        txtDocumentoId.setText("");
+        txtCuenta.setText("");
+        txtNombre.setText("");
+        txtTelefono.setText("");
     }
 }

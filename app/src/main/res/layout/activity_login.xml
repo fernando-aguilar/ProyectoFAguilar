@@ -11,7 +11,7 @@
     android:weightSum="1">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgLogo"
         android:layout_width="305dp"
         android:layout_height="107dp"
         android:layout_gravity="center"
@@ -47,7 +47,7 @@
         android:background="@android:color/background_light"
         android:fontFamily="sans-serif"
         android:hint="@string/clave_usuario"
-        android:inputType="textPassword"
+        android:inputType="numberPassword"
         android:paddingBottom="5dp"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
@@ -64,4 +64,4 @@
         android:text="@string/login"
         android:textColor="@color/divider" />
 
-</LinearLayout>
+  </LinearLayout>

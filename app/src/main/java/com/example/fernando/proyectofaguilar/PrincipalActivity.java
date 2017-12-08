@@ -166,26 +166,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 seleccionado = new UsuarioFragment();
                 break;
             default:
-                AlertDialog.Builder Dialogo = new AlertDialog.Builder(PrincipalActivity.this);
-                Dialogo.setTitle("Salir de la Aplicación");
-                Dialogo.setMessage("¿Está seguro de salir de la aplicación? ");
-                Dialogo.setIcon(R.drawable.info);
-
-                Dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //finish();
-                        finish();
-                        System.exit(0);
-                    }
-                });
-                Dialogo.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                Dialogo.show();
+                spAlertaSalirAplicacion();
                 break;
         }
 
@@ -230,33 +211,37 @@ public class PrincipalActivity extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
             //super.finish();
-            AlertDialog.Builder Dialogo = new AlertDialog.Builder(PrincipalActivity.this);
-            Dialogo.setTitle("Salir de la Aplicación");
-            Dialogo.setMessage("¿Está seguro de salir de la aplicación? ");
-            Dialogo.setIcon(R.drawable.info);
+            spAlertaSalirAplicacion();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
-            Dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    //finish();
+    private void spAlertaSalirAplicacion() {
+        AlertDialog.Builder Dialogo = new AlertDialog.Builder(PrincipalActivity.this);
+        Dialogo.setTitle("Salir de la Aplicación");
+        Dialogo.setMessage("¿Está seguro de salir de la aplicación? ");
+        Dialogo.setIcon(R.drawable.question);
 
-                    finish();
-                    System.exit(0);
+        Dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //finish();
+
+                finish();
+                System.exit(0);
 
                     /*Intent intent = new Intent(Intent.ACTION_MAIN);
                     intent.addCategory(Intent.CATEGORY_HOME);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);*/
-                }
-            });
-            Dialogo.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.cancel();
-                }
-            });
-            Dialogo.show();
-        }
-        return super.onKeyDown(keyCode, event);
+            }
+        });
+        Dialogo.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        Dialogo.show();
     }
 }
