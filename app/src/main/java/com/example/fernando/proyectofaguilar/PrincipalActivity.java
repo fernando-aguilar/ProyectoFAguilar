@@ -158,6 +158,8 @@ public class PrincipalActivity extends AppCompatActivity {
                 startActivity(clientesIntent);
                 break;
             case DRAWER_ITEM_DOS:
+                Intent vencimientosIntent = new Intent(context, VencimientosActivity.class);
+                startActivity(vencimientosIntent);
                 break;
             case DRAWER_ITEM_TRES:
                 break;
